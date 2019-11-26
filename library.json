@@ -1,0 +1,21 @@
+{
+  "name": "TM1651",
+  "version": "1.0.0",
+  "keywords": "led, battery, display, open smart",
+  "description": "Library for LED Battery Display based on TM1651",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freekode/TM1651.git"
+  },
+  "authors": [
+    {
+      "name": "Fred Chu"
+    },
+    {
+      "name": "Detlef Giessmann",
+      "email": "mydiyp@web.de"
+    }
+  ],
+  "frameworks": "arduino",
+  "platforms": "*"
+}
