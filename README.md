@@ -1,7 +1,7 @@
 # TM1651
-Library for mini battery display
+[![Build Status](https://travis-ci.org/freekode/TM1651.svg?branch=master)](https://travis-ci.org/freekode/TM1651)
 
-![Build](https://travis-ci.org/freekode/TM1651.svg?branch=master)
+Library for mini battery display
 
 ![Battery Display](display.jpg)
 
