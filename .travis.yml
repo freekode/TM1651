@@ -1,0 +1,15 @@
+language: python
+python:
+  - "3.7"
+
+sudo: false
+cache:
+  directories:
+    - "~/.platformio"
+
+install:
+  - pip install -U platformio
+
+script:
+  - pio ci examples/BatteryBlink/BatteryBlink.ino -l ./ -c platformio.ini
+  - pio ci examples/BatteryCharging/BatteryCharging.ino -l ./ -c platformio.ini
