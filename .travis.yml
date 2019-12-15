@@ -1,11 +1,27 @@
 os: linux
 language: python
-python:
-  - "3.7"
+python: '3.7'
 
 install:
   - pip install -U platformio
 
-script:
-  - pio ci examples/BatteryBlink/BatteryBlink.ino -l ./ -c platformio.ini
-  - pio ci examples/BatteryCharging/BatteryCharging.ino -l ./ -c platformio.ini
+matrix:
+  fast_finish: true
+  include:
+    - env: BOARD=nodemcuv2
+      script:
+        - pio ci examples/BatteryBlink/BatteryBlink.ino --lib ./ --board $BOARD
+        - pio ci examples/BatteryCharging/BatteryCharging.ino --lib ./ --board $BOARD
+    - env: BOARD=nanoatmega328
+      script:
+        - pio ci examples/BatteryBlink/BatteryBlink.ino --lib ./ --board $BOARD
+        - pio ci examples/BatteryCharging/BatteryCharging.ino --lib ./ --board $BOARD
+    - env: BOARD=nodemcu-32s
+      script:
+        - pio ci examples/BatteryBlink/BatteryBlink.ino --lib ./ --board $BOARD
+        - pio ci examples/BatteryCharging/BatteryCharging.ino --lib ./ --board $BOARD
+    - env: BOARD=d1_mini
+      script:
+        - pio ci examples/BatteryBlink/BatteryBlink.ino --lib ./ --board $BOARD
+        - pio ci examples/BatteryCharging/BatteryCharging.ino --lib ./ --board $BOARD
+
