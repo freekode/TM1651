@@ -1,6 +1,6 @@
 {
   "name": "TM1651",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": "led, battery, display, open smart",
   "description": "Library for LED Battery Display based on TM1651",
   "license": "MIT",
