@@ -9,19 +9,10 @@ matrix:
   fast_finish: true
   include:
     - env: BOARD=nodemcuv2
-      script:
-        - pio ci examples/BatteryBlink/BatteryBlink.ino --lib ./ --board $BOARD
-        - pio ci examples/BatteryCharging/BatteryCharging.ino --lib ./ --board $BOARD
     - env: BOARD=nanoatmega328
-      script:
-        - pio ci examples/BatteryBlink/BatteryBlink.ino --lib ./ --board $BOARD
-        - pio ci examples/BatteryCharging/BatteryCharging.ino --lib ./ --board $BOARD
     - env: BOARD=nodemcu-32s
-      script:
-        - pio ci examples/BatteryBlink/BatteryBlink.ino --lib ./ --board $BOARD
-        - pio ci examples/BatteryCharging/BatteryCharging.ino --lib ./ --board $BOARD
     - env: BOARD=d1_mini
-      script:
-        - pio ci examples/BatteryBlink/BatteryBlink.ino --lib ./ --board $BOARD
-        - pio ci examples/BatteryCharging/BatteryCharging.ino --lib ./ --board $BOARD
 
+script:
+  - pio ci examples/BatteryBlink/BatteryBlink.ino --lib ./ --board $BOARD
+  - pio ci examples/BatteryCharging/BatteryCharging.ino --lib ./ --board $BOARD

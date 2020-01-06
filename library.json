@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "keywords": "led, battery, display, open smart",
   "description": "Library for LED Battery Display based on TM1651",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/freekode/TM1651.git"
@@ -14,6 +15,10 @@
     {
       "name": "Detlef Giessmann",
       "email": "mydiyp@web.de"
+    },
+    {
+      "name": "freekode",
+      "maintainer": true
     }
   ],
   "frameworks": "arduino",
