@@ -1,0 +1,24 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:   
+  build:
+    name: Build ${{ matrix.board }}
+    runs-on: ubuntu-latest
+    strategy: 
+      matrix:
+        board: [nodemcuv2, nanoatmega328, nodemcu-32s, d1_mini]
+    steps:
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    - name: Install PlatformIO
+      run: python -m pip install platformio --user
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Build example
+      run: |
+        python -m platformio ci examples/BatteryBlink/BatteryBlink.ino --lib ./ --board ${{ matrix.board }}
+        python -m platformio ci examples/BatteryCharging/BatteryCharging.ino --lib ./ --board ${{ matrix.board }}
