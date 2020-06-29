@@ -22,5 +22,5 @@ jobs:
       uses: actions/checkout@v2
     - name: Build example
       run: |
-        python -m pio ci examples/BatteryBlink/BatteryBlink.ino --lib ./ --board ${{ matrix.board }}
-        python -m pio ci examples/BatteryCharging/BatteryCharging.ino --lib ./ --board ${{ matrix.board }}
+        python -m platformio ci examples/BatteryBlink/BatteryBlink.ino --lib ./ --board ${{ matrix.board }}
+        python -m platformio ci examples/BatteryCharging/BatteryCharging.ino --lib ./ --board ${{ matrix.board }}
