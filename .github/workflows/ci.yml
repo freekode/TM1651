@@ -27,4 +27,4 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Build example
-      run: pio ci examples/${{ matrix.example }} --lib ./ --board ${{ matrix.board }}
+      run: python -m pio ci examples/${{ matrix.example }} --lib ./ --board ${{ matrix.board }}
