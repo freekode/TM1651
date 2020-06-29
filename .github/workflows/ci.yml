@@ -23,8 +23,8 @@ jobs:
       matrix:
         example: [BatteryBlink/BatteryBlink.ino, BatteryCharging/BatteryCharging.ino]
         board: [nodemcuv2, nanoatmega328, nodemcu-32s, d1_mini]
-     steps:
-     - name: Checkout code
-       uses: actions/checkout@v2
-     - name: Build example
-       run: pio ci examples/${{ matrix.example }} --lib ./ --board ${{ matrix.board }}
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Build example
+      run: pio ci examples/${{ matrix.example }} --lib ./ --board ${{ matrix.board }}
