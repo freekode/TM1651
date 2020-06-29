@@ -5,17 +5,6 @@ on:
   pull_request:
 
 jobs:   
-  prepare:
-    name: Prepare environment
-    runs-on: ubuntu-latest
-    steps:
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.7
-    - name: Install PlatformIO
-      run: python -m pip install platformio --user
-  
   build:
     name: Build ${{ matrix.board }}
     runs-on: ubuntu-latest
@@ -23,6 +12,12 @@ jobs:
       matrix:
         board: [nodemcuv2, nanoatmega328, nodemcu-32s, d1_mini]
     steps:
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    - name: Install PlatformIO
+      run: python -m pip install platformio --user
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Build example
